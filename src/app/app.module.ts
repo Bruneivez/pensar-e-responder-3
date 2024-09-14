@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';  // Necessário para ngModel
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DateSelectorComponent } from './date-selector/date-selector.component';
+import { CalendarPageComponent } from './calendar-page/calendar-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DateSelectorComponent,
+    CalendarPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule  // Importando o FormsModule para usar ngModel
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
